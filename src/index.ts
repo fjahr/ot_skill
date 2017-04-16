@@ -26,6 +26,8 @@ let handlers: Alexa.Handlers = {
           syns.splice(ownIndex, 1);
         }
 
+        syns = syns.slice(0,9);
+
         let speechOutput = "Synonyme für " + value + " sind " + syns.join(", ") + ".";
         self.emit(":tellWithCard", speechOutput, "Open Thesaurus", speechOutput);
       };

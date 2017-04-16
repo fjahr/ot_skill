@@ -25,6 +25,7 @@ var handlers = {
                 if (ownIndex > -1) {
                     syns.splice(ownIndex, 1);
                 }
+                syns = syns.slice(0, 9);
                 var speechOutput = "Synonyme für " + value + " sind " + syns.join(", ") + ".";
                 self.emit(":tellWithCard", speechOutput, "Open Thesaurus", speechOutput);
             }

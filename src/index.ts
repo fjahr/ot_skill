@@ -14,11 +14,16 @@ let handlers: Alexa.Handlers = {
         self.emit(":tellWithCard", speechOutput, "Open Thesaurus", speechOutput);
       } else {
         let json = JSON.parse(body);
-        let terms = json['synsets'][0].terms
-        var syns = []
+        let terms = json['synsets'][0].terms;
+        var syns = [];
 
         for(let term of terms) {
-          syns.push(term["term"])
+          syns.push(term["term"]);
+        }
+
+        let ownIndex = syns.indexOf(value);
+        if (ownIndex > -1) {
+          syns.splice(ownIndex, 1);
         }
 
         let speechOutput = "Synonyme für " + value + " sind " + syns.join(", ") + ".";

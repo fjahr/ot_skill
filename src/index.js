@@ -21,6 +21,10 @@ var handlers = {
                     var term = terms_1[_i];
                     syns.push(term["term"]);
                 }
+                var ownIndex = syns.indexOf(value);
+                if (ownIndex > -1) {
+                    syns.splice(ownIndex, 1);
+                }
                 var speechOutput = "Synonyme für " + value + " sind " + syns.join(", ") + ".";
                 self.emit(":tellWithCard", speechOutput, "Open Thesaurus", speechOutput);
             }

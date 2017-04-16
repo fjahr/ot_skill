@@ -60,12 +60,16 @@ describe("Testing SynonymsIntent", function() {
   });
 
   describe("Response should use API response", function() {
-    it("should include the requested word", function() {
+    it("should include the requested word in response", function() {
       expect(speechResponse.response.outputSpeech.ssml).to.contain('gut');
     });
 
     it("should include api response words", function() {
       expect(speechResponse.response.outputSpeech.ssml).to.contain('manierlich, positiv, schön');
+    });
+
+    it("should not include requested word in synonyms list", function() {
+      expect(speechResponse.response.outputSpeech.ssml).to.not.contain('gut, manierlich, positiv, schön');
     });
   });
 

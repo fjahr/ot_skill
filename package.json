@@ -1,0 +1,9 @@
+{
+  "name": "ot_skill",
+  "version": "1.0.0",
+  "description": "Open Thesaurus Alexa Skill",
+  "main": "index.js",
+  "repository": "git@github.com:fjahr/ot_skill.git",
+  "author": "Fabian Jahr",
+  "license": "MIT"
+}

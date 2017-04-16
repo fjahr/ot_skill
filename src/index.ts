@@ -38,7 +38,7 @@ let handlers: Alexa.Handlers = {
 export class Handler {
   constructor(event: Alexa.RequestBody, context: Alexa.context, callback: Function) {
     let alexa = Alexa.handler(event, context);
-    alexa.appId = "ot_skill";
+    alexa.appId = "amzn1.ask.skill.c4e913da-6e63-451c-bce4-515a998a5c4e";
     alexa.registerHandlers(handlers);
     alexa.execute();
   }

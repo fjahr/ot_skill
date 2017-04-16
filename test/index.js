@@ -15,7 +15,7 @@ describe("Testing SynonymsIntent", function() {
           "session": {
                 "sessionId": "SessionId.6ab325dd-xxxx-xxxx-aee5-456cd330932a",
                 "application": {
-                        "applicationId": "ot_skill"
+                        "applicationId": "amzn1.ask.skill.c4e913da-6e63-451c-bce4-515a998a5c4e"
                       },
                 "attributes": {},
                 "user": {

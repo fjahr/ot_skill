@@ -7,9 +7,11 @@
   "author": "Fabian Jahr",
   "license": "MIT",
   "dependencies": {
+    "@types/request": "0.0.42",
     "alexa-sdk": "^1.0.8",
     "aws-lambda-mock-context": "^3.0.1",
     "chai": "^3.5.0",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "request": "^2.81.0"
   }
 }

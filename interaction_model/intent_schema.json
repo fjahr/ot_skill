@@ -1,0 +1,13 @@
+{
+  "intents": [
+    {
+      "intent": "SynonymsIntent",
+      "slots": [
+        {
+          "name": "word",
+          "type": "words"
+        }
+      ]
+    }
+  ]
+}

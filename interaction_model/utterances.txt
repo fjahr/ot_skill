@@ -13,5 +13,7 @@ SynonymsIntent was sind Synonyme von {word}
 SynonymsIntent welche Synonyme hat {word}
 SynonymsIntent ein anders Wort für {word}
 SynonymsIntent nach einem anderen Wort für {word}
-
-StartedIntent {word}
+SynonymsIntent nach Synonymen von {word}
+SynonymsIntent nach einem Synonym von {word}
+SynonymsIntent nach Synonymen für {word}
+SynonymsIntent nach einem Synonym für {word}

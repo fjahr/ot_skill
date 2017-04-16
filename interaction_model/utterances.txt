@@ -1,0 +1,17 @@
+SynonymsIntent was sind andere Bedeutungen von {word}
+SynonymsIntent was sind andere Wörter für {word}
+SynonymsIntent was Synonyme für {word}
+SynonymsIntent was ist eine andere Bedeutung von {word}
+SynonymsIntent was ist ein anderes Wort für {word}
+SynonymsIntent was ist ein Synonym für {word}
+SynonymsIntent was ist ein Synonym von {word}
+SynonymsIntent was könnte man sagen anstatt {word}
+SynonymsIntent was könnte man sagen anstatt von {word}
+SynonymsIntent was könnte man noch sagen anstatt {word}
+SynonymsIntent was könnte man noch sagen für {word}
+SynonymsIntent was sind Synonyme von {word}
+SynonymsIntent welche Synonyme hat {word}
+SynonymsIntent ein anders Wort für {word}
+SynonymsIntent nach einem anderen Wort für {word}
+
+StartedIntent {word}

@@ -58,4 +58,15 @@ describe("Testing SynonymsIntent", function() {
       expect(speechError).to.be.null;
     });
   });
+
+  describe("Response should use API response", function() {
+    it("should include the requested word", function() {
+      expect(speechResponse.response.outputSpeech.ssml).to.contain('gut');
+    });
+
+    it("should include api response words", function() {
+      expect(speechResponse.response.outputSpeech.ssml).to.contain('manierlich, positiv, schön');
+    });
+  });
+
 });

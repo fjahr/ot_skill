@@ -15,19 +15,26 @@ var handlers = {
             }
             else {
                 var json = JSON.parse(body);
-                var terms = json['synsets'][0].terms;
-                var syns = [];
-                for (var _i = 0, terms_1 = terms; _i < terms_1.length; _i++) {
-                    var term = terms_1[_i];
-                    syns.push(term["term"]);
+                var synsets = json['synsets'];
+                if (synsets.length > 0) {
+                    var terms = synsets[0].terms;
+                    var syns = [];
+                    for (var _i = 0, terms_1 = terms; _i < terms_1.length; _i++) {
+                        var term = terms_1[_i];
+                        syns.push(term["term"]);
+                    }
+                    var ownIndex = syns.indexOf(value);
+                    if (ownIndex > -1) {
+                        syns.splice(ownIndex, 1);
+                    }
+                    syns = syns.slice(0, 9);
+                    var speechOutput = "Synonyme für " + value + " sind " + syns.join(", ") + ".";
+                    self.emit(":tellWithCard", speechOutput, "Open Thesaurus", speechOutput);
                 }
-                var ownIndex = syns.indexOf(value);
-                if (ownIndex > -1) {
-                    syns.splice(ownIndex, 1);
+                else {
+                    var speechOutput = "Leider konnten wir keine Synonyme zu " + value + " finden.";
+                    self.emit(":tellWithCard", speechOutput, "Open Thesaurus", speechOutput);
                 }
-                syns = syns.slice(0, 9);
-                var speechOutput = "Synonyme für " + value + " sind " + syns.join(", ") + ".";
-                self.emit(":tellWithCard", speechOutput, "Open Thesaurus", speechOutput);
             }
             ;
         });

@@ -14,22 +14,29 @@ let handlers: Alexa.Handlers = {
         self.emit(":tellWithCard", speechOutput, "Open Thesaurus", speechOutput);
       } else {
         let json = JSON.parse(body);
-        let terms = json['synsets'][0].terms;
-        var syns = [];
+        let synsets = json['synsets'];
 
-        for(let term of terms) {
-          syns.push(term["term"]);
+        if (synsets.length > 0) {
+            let terms = synsets[0].terms;
+            var syns = [];
+
+          for(let term of terms) {
+            syns.push(term["term"]);
+          }
+
+          let ownIndex = syns.indexOf(value);
+          if (ownIndex > -1) {
+            syns.splice(ownIndex, 1);
+          }
+
+          syns = syns.slice(0,9);
+
+          let speechOutput = "Synonyme für " + value + " sind " + syns.join(", ") + ".";
+          self.emit(":tellWithCard", speechOutput, "Open Thesaurus", speechOutput);
+        } else {
+          let speechOutput = "Leider konnten wir keine Synonyme zu " + value + " finden.";
+          self.emit(":tellWithCard", speechOutput, "Open Thesaurus", speechOutput);
         }
-
-        let ownIndex = syns.indexOf(value);
-        if (ownIndex > -1) {
-          syns.splice(ownIndex, 1);
-        }
-
-        syns = syns.slice(0,9);
-
-        let speechOutput = "Synonyme für " + value + " sind " + syns.join(", ") + ".";
-        self.emit(":tellWithCard", speechOutput, "Open Thesaurus", speechOutput);
       };
     });
   }
